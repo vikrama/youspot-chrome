@@ -1,7 +1,7 @@
 {
   "name": "YouSpot",
   "version": "1",
-  "description": "Instant aka 1-click Spotify-cation of the currently playing Youtube song. Yup, it's just 1-click away! (For Spotify app users)",
+  "description": "1-click 'Spotify'cation of the currently playing Youtube song. Yup, it's just 1-click away! (For Spotify app users)",
   "icons": { "128": "icon.png" },
   "background": { 
 		"scripts": ["parseUri.js", "bg.js"]
