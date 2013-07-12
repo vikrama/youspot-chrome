@@ -1,0 +1,26 @@
+{
+  "name": "YouSpot",
+  "version": "1",
+  "description": "Instant aka 1-click Spotify-cation of the currently playing Youtube song. Yup, it's just 1-click away! (For Spotify app users)",
+  "icons": { "128": "icon.png" },
+  "background": { 
+		"scripts": ["parseUri.js", "bg.js"]
+	},
+  "content_scripts": [
+    { 
+		"matches": ["http://www.youtube.com/watch?v*", "https://www.youtube.com/watch?v*"], 
+		"js": ["jquery.min.js", "jquery.livequery.js", "json2.js", "parseUri.js", "content_script.js"],
+		"run_at" : "document_idle",
+		"all_frames" : true
+	}
+  ],
+  "permissions": [
+    "tabs",
+	"http://youtube.com/*"
+  ],
+  "page_action": {
+      "default_name": "Search Youtube song in Spotify",
+      "default_icon": "marker.png"
+  },
+  "manifest_version": 2
+}
