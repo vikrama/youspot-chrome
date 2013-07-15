@@ -3,7 +3,7 @@ var selectedInfo = null;
 var selectedTab = null;
 var selectedId = null;
 var SPOTIFY_OPEN_URI = "https://open.spotify.com/search/";
-var SPOTIFY_APP_URI = "spotify:search:track:";
+var SPOTIFY_APP_URI = "spotify:search:";
 
 function check(tabId, changeInfo, tab) {
 	selectedTab = tab;
@@ -27,7 +27,8 @@ chrome.tabs.onSelectionChanged.addListener(function(tabId, info) {
 
 function grabSpotifyURL(vTitle) {
 	vTitle = cleanTitle(vTitle);
-	return SPOTIFY_APP_URI + encodeURIComponent(vTitle);
+	//return SPOTIFY_APP_URI + encodeURIComponent(vTitle);
+	return SPOTIFY_APP_URI + vTitle;
 }
 
 /* http://gskinner.com/RegExr/ */
@@ -53,6 +54,15 @@ function cleanTitle(vTitle) {
 	
 	/* Replaces multi spaces with single spaces*/
 	newtitle = newtitle.replace(/\s{2,}/gi,' ');
+	
+	/* Removes leading and trailing spaces */
+	newtitle = newtitle.replace(/^\s+|\s+$/g,'');
+	
+	newtitle = newtitle.toLowerCase();
+	
+	/* Replaces spaces with + for url encoding */
+	/* encodeURIComponent doesn't seem to be giving proper results */
+	newtitle = newtitle.replace(/\s/gi,'+');
 	
 	return newtitle;
 }
@@ -84,5 +94,6 @@ chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
 	var spotyURL = grabSpotifyURL(vTitle);
 	storeTitle(vTitle);
 	updatePageAction();
+	chrome.tabs.insertCSS(selectedId, {file:"youspot.css"}, null);
 	sendResponse({spotifyUrl:spotyURL});
 });

@@ -1,0 +1,105 @@
+/*
+ * Container
+ */
+ 
+#HearInSpotifyWrapper {
+	margin-left: 10px;
+}
+
+.hearInSpotifyContainer {
+	display: inline-block;
+	white-space: nowrap;
+}
+
+button.hearInSpotify {
+	font-family: arial,sans-serif;
+	padding: 0 8px 0 6px;
+	height: 24px;
+	outline: 0;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+	white-space: nowrap;
+	word-wrap: normal;
+	line-height: normal;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+	box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+.youspot-button-icon-wrapper {
+	width: 16px;
+	height: 13px;
+	display: inline-block;
+	margin-right: 6px;
+	max-height: 16px;
+	font-size: 0;
+	vertical-align: middle;
+}
+
+.youspot-button-icon {
+	background: no-repeat url(icon-sm.png) 0px 0px;
+	background-size: auto;
+	width: 12px;
+	height: 12px;
+	vertical-align: middle;
+}
+
+.youspot-button-content {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.youspot-button-label {
+	height: auto;
+	visibility: visible;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	word-wrap: normal;
+	text-overflow: ellipsis;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	top: -1px;
+}
+
+/*
+ * 'Hear In Spotify' button
+ */
+button.hearInSpotify {
+	color: #FFF;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	border: 1px solid #7ea613;
+	
+	/* Spotify button */
+	background-color: #9eca3b;
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#acd341),to(#88bd32));
+	background-image: -webkit-linear-gradient(top,#acd341,#88bd32);
+	background-image: linear-gradient(top,#acd341,#88bd32);
+	background-repeat: repeat-x;
+	text-shadow: 0 -1px 0 #72942a;
+	
+	/* CSS3 button */
+	background-color: #7fbf4d;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+	background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: linear-gradient(top, #7fbf4d, #63a62f);
+	text-shadow: 0 -1px 0 #4c9021;
+	border: 1px solid #63a62f;
+	border-bottom: 1px solid #5b992b;
+	-webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+	box-shadow: inset 0 1px 0 0 #96ca6d;
+}
+
+button.hearInSpotify:hover {
+	background-color: #a1cf3c;
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#b2db42),to(#88bd32));
+	background-image: -webkit-linear-gradient(top,#b2db42,#88bd32);
+	background-image: linear-gradient(top,#b2db42,#88bd32);
+	background-repeat: repeat-x;
+}
